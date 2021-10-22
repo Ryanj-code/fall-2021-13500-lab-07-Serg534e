@@ -34,18 +34,18 @@ std:: string indent(std:: string x){
   int tabs=0;
   fin.open(x);
   while(std::getline(fin,line)){
-    line = removeLeadingSpaces(line);
-    int count1 = countChar(line, '{');
-		int count2 = countChar(line, '}');
-		if (line[0] == '}'){
-			tabs--;
-			count2--;
-		}
-		for (int i=0; i<tabs; i++)
-				line = "\t" + line;
-		tabs +=count1;
-    tabs -=count2;
-		result += line;
+    line=removeLeadingSpaces(line);
+    int count1=countChar(line,'{');
+    int count2=countChar(line,'}');
+    if(line[0]=='}'){
+      tabs--;
+      count2--;
+    }
+    for(int i =0; i<tabs;i++)
+      line="\t"+line;
+    tabs+=count1;
+    tabs-=count2;
+    result+=line;
   }
   fin.close();
   return result;
