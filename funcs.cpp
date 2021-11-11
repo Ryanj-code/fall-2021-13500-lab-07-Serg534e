@@ -3,7 +3,10 @@
 #include <cctype>
 #include <fstream>
 
-
+/* 
+The function that removes leading spaces.
+It checks if there is space and returns the first string that is not a space.
+*/
 std:: string removeLeadingSpaces(std:: string line){
   bool x = false;
   std:: string result;
@@ -18,6 +21,11 @@ std:: string removeLeadingSpaces(std:: string line){
     result+="\n";
     return result;
 }
+
+/*
+The function that counts number of times c appears in line.
+Loops through line, increases counter everytime c appears, then returns counter at the end.
+*/
 int countChar(std::string line, char c){
   int counter;
   for(int i =0; i<line.length();i++){
@@ -27,6 +35,11 @@ int countChar(std::string line, char c){
   }
   return counter;
 }
+
+/*
+The function that does the indenting.
+Opens a file and checks the lines for open and close brackets, and then adds or removes tabs accordingly.
+*/
 std:: string indent(std:: string x){
   std:: string result;
   std:: string line;
@@ -50,6 +63,11 @@ std:: string indent(std:: string x){
   fin.close();
   return result;
 }
+
+/*
+The function that does the unindenting.
+Opens a file and unindents all lines by removing the spaces. 
+*/
 std:: string unindent(std:: string x){
   std:: string result;
   std:: string line;
